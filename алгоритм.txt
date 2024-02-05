@@ -1,0 +1,101 @@
+1
+Question: How would you verify a prime number? ( просте число)
+
+
+function isPrime(a) { 
+    if (a === 2 ) { 
+        return true;
+    } else if (a % 2 === 0) {
+        return false;
+    } else { 
+        return true;
+    }
+}
+
+isPrime(1);
+==================
+
+після розмови з тобою я допитував чат гпт, який видав:
+function isPrime(a) { 
+    if (a === 2) { 
+        return true;
+    } 
+    if (a % 2 === 0) {
+        return false;
+    } 
+    return true;
+}
+===================
+
+2 Question: How could you find all prime factors of a number? 
+Вопрос: Как найти все простые множители числа?
+
+
+function primeFactor(b) { 
+    let a = [];
+    let divider = 2;
+    while (divider < b){
+        if (b % divider === 0) { 
+            a.push(divider);
+            b = b / divider; 
+            if (b / divider === 1) { 
+                a.push(divider);  
+            }
+        } else {
+            divider++;
+        }
+    }
+    return a;
+}
+
+
+--------------------
+fibonacci: 
+
+
+let howmuch = 12;
+function fibonacci(howmuch){
+    let fibonacci =[0, 1];
+    for (a =1; a<howmuch; a++){ 
+        fibonacci.push(fibonacci[a-1]+fibonacci[a]);}
+        return fibonacci;}
+
+console.log(fibonacci(howmuch));
+
+-----------------------
+divider:
+let a = [66, 1007];
+
+function Greatest(arr) {
+  let lowest = function (arr) {
+    if (arr[0] < arr[1]) {
+      return arr[0];
+    } else {
+      return arr[1];
+    }
+  };
+
+  let highest = function (arr) {
+    if (arr[0] > arr[1]) {
+      return arr[0];
+    } else {
+      return arr[1];
+    }
+  };
+
+  if (highest(arr) % lowest(arr) === 0) {
+    console.log("divider is: " + lowest(arr));
+  } else {
+    
+    for (let t = lowest(arr); t >= 1; t--) {
+      if (highest(arr) % t === 0 && lowest(arr) % t === 0) {
+        console.log("hightest divider:" + t);
+          
+      }
+    }
+  }
+  console.log("highest: " + highest(arr));
+  console.log("lowest: " + lowest(arr));
+}
+
+Greatest(a);
